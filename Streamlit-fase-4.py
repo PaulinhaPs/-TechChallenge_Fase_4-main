@@ -14,6 +14,7 @@ from torch.optim import Adam
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 from itertools import product 
 import statsmodels.api as sm
+import os
 
 # Desativa o aviso PyplotGlobalUseWarning
 st.set_option('deprecation.showPyplotGlobalUse', False)
