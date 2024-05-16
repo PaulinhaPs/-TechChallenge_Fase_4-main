@@ -19,8 +19,6 @@ import os
 # Desativa o aviso PyplotGlobalUseWarning
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
-LOCAL = os.path.abspath(os.path.realpath(os.path.dirname(__file__)))
-
 def main():
     st.title("Tech Challenge - Fase 4")
 
@@ -54,7 +52,7 @@ def apresentacao_introducao():
 def apresentacao_Preparação_dos_Dados():
     st.header("Exploração e Preparação de Dados")
 
-    LOCAL = os.path.abspath(os.path.realpath(os.path.dirname(__file__)))
+  LOCAL = os.path.abspath(os.path.realpath(os.path.dirname(__file__)))
  
     # Carregar o arquivo Excel
     df = pd.read_excel(os.path.join(LOCAL, "Petróleo.xlsx"))
