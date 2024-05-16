@@ -51,8 +51,10 @@ def apresentacao_introducao():
 def apresentacao_Preparação_dos_Dados():
     st.header("Exploração e Preparação de Dados")
 
+    LOCAL = os.path.abspath(os.path.realpath(os.path.dirname(__file__)))
+ 
     # Carregar o arquivo Excel
-    df = pd.read_excel('Petróleo.xlsx')
+    df = pd.read_excel(os.path.join(LOCAL, "Petróleo.xlsx"))
 
     # Adicione seu código aqui
     codigo = """
@@ -65,7 +67,7 @@ def apresentacao_Preparação_dos_Dados():
     import calendar
 
     # Carregar o arquivo Excel
-    df = pd.read_excel('Petróleo.xlsx')
+    df = pd.read_excel(os.path.join(LOCAL, "Petróleo.xlsx"))
 
     print(df.head())
 
@@ -384,7 +386,7 @@ def apresentacao_Exploração_dos_Dados():
     st.code(codigo, language='python')
 
     # Carregar o arquivo Excel
-    df = pd.read_excel('Petróleo.xlsx')
+    df = pd.read_excel(os.path.join(LOCAL, "Petróleo.xlsx"))
 
     # Tratando a nova planilha de correlação com o dólar
     df_dolar = pd.read_csv('USD_BRL Dados Históricos.csv', delimiter=',', thousands='.', decimal=',', parse_dates=['Data'], dayfirst=True)
@@ -574,7 +576,7 @@ def apresentacao_Modelo_Machine_Learning_LSTM():
 
     # 2
     codigo = """# Carrega os dados do arquivo Excel
-    df = pd.read_excel("Petróleo.xlsx")
+    df = pd.read_excel(os.path.join(LOCAL, "Petróleo.xlsx"))
 
     # Mostra as primeiras linhas do DataFrame
     print(df.head())
@@ -612,7 +614,7 @@ def apresentacao_Modelo_Machine_Learning_LSTM():
     return updated_df
 
     # Carrega os dados do arquivo Excel
-    new_df = pd.read_excel("Petróleo.xlsx")
+    new_df = pd.read_excel(os.path.join(LOCAL, "Petróleo.xlsx"))
 
     # Verifica se o arquivo do DataFrame existe e carrega, ou cria um novo DataFrame se não existir
     path = 'ipea.csv'  # Especifique o nome do arquivo no mesmo diretório do seu script
@@ -772,7 +774,7 @@ def apresentacao_Modelo_Machine_Learning_LSTM():
     # 8
     codigo = """
     # Carregar o DataFrame
-    df = pd.read_excel('Petróleo.xlsx')
+    df = pd.read_excel(os.path.join(LOCAL, "Petróleo.xlsx"))
     df['Data'] = pd.to_datetime(df['Data'])
     df = df.sort_values(by='Data', ascending=True).reset_index(drop=True)
 
@@ -955,7 +957,7 @@ def apresentacao_Modelo_Machine_Learning_LSTM():
     st.code(codigo, language='python')
 
     # Carrega os dados do arquivo Excel
-    df = pd.read_excel("Petróleo.xlsx")
+    df = pd.read_excel(os.path.join(LOCAL, "Petróleo.xlsx"))
 
     # Mostra as primeiras linhas do DataFrame
     st.write(df.head())
@@ -1104,7 +1106,7 @@ def apresentacao_Modelo_Machine_Learning_LSTM():
     st.pyplot(plt)
 
     # Carregar o DataFrame
-    df = pd.read_excel('Petróleo.xlsx')
+    df = pd.read_excel(os.path.join(LOCAL, "Petróleo.xlsx"))
     df['Data'] = pd.to_datetime(df['Data'])
     df = df.sort_values(by='Data', ascending=True).reset_index(drop=True)
 
@@ -1268,7 +1270,7 @@ def apresentacao_Modelo_Machine_Learning_LSTM():
     st.write("Comprimento das previsões:", len(predictions))
 
     # Carregar o DataFrame
-    df = pd.read_excel('Petróleo.xlsx')
+    df = pd.read_excel(os.path.join(LOCAL, "Petróleo.xlsx"))
     df['Data'] = pd.to_datetime(df['Data'])
     df = df.sort_values(by='Data', ascending=True).reset_index(drop=True)
 
@@ -1542,7 +1544,7 @@ def apresentacao_Modelo_Machine_Learning_ARIMA():
     st.write("Treinamento do modelo iniciado. Aguarde...")
 
     # Carregar os dados do petróleo
-    df = pd.read_excel('Petróleo.xlsx')
+    df = pd.read_excel(os.path.join(LOCAL, "Petróleo.xlsx"))
 
     # Converter a coluna 'Data' para datetime
     df['Data'] = pd.to_datetime(df['Data'])
