@@ -18,6 +18,8 @@ import statsmodels.api as sm
 # Desativa o aviso PyplotGlobalUseWarning
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
+LOCAL = os.path.abspath(os.path.realpath(os.path.dirname(__file__)))
+
 def main():
     st.title("Tech Challenge - Fase 4")
 
