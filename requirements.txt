@@ -6,8 +6,6 @@ blinker==1.8.2
 brotlipy==0.7.0
 cachetools==5.3.3
 clyent==1.2.1
-conda-verify==
-constantly==
 cssselect==
 datashape==0.5.4
 et-xmlfile==1.1.0
