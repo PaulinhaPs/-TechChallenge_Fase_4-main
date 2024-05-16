@@ -52,7 +52,7 @@ def apresentacao_introducao():
 def apresentacao_Preparação_dos_Dados():
     st.header("Exploração e Preparação de Dados")
 
-  LOCAL = os.path.abspath(os.path.realpath(os.path.dirname(__file__)))
+    LOCAL = os.path.abspath(os.path.realpath(os.path.dirname(__file__)))
  
     # Carregar o arquivo Excel
     df = pd.read_excel(os.path.join(LOCAL, "Petróleo.xlsx"))
